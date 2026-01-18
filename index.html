@@ -52,6 +52,7 @@
       background: linear-gradient(to top, #0f172a, transparent, transparent);
     }
 
+    /* Logo Styling */
     .logo-container {
       position: absolute;
       top: 2rem;
@@ -64,6 +65,8 @@
 
     .logo {
       height: 4rem;
+      width: auto;
+      display: block;
     }
 
     @media (min-width: 768px) {
@@ -79,18 +82,6 @@
       margin: 0 auto;
       padding: 0 1rem;
       text-align: center;
-    }
-
-    @media (min-width: 640px) {
-      .hero-content {
-        padding: 0 1.5rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-content {
-        padding: 0 2rem;
-      }
     }
 
     .hero-title-container {
@@ -139,12 +130,6 @@
       animation: fadeInUp 0.8s ease-out 0.2s forwards;
     }
 
-    @media (min-width: 768px) {
-      .hero-description {
-        font-size: 1.5rem;
-      }
-    }
-
     /* Footer */
     .footer {
       background-color: #020617;
@@ -154,20 +139,8 @@
     .footer-content {
       max-width: 80rem;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 2rem;
       text-align: center;
-    }
-
-    @media (min-width: 640px) {
-      .footer-content {
-        padding: 0 1.5rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .footer-content {
-        padding: 0 2rem;
-      }
     }
 
     .footer-text {
@@ -191,23 +164,20 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
+
   <section class="hero">
-    <!-- Background Image -->
     <div class="hero-background">
       <img 
-        src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXJ0dWFsJTIwcmVhbGl0eSUyMGhlYWRzZXR8ZW58MXx8fHwxNzY4NjA4NTE3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+        src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
         alt="VR Headset"
       />
       <div class="hero-overlay"></div>
     </div>
 
-    <!-- Logo in top left -->
-    <!-- <div class="logo-container">
-      <img src="https://drive.google.com/file/d/1gLMDQ7BH0Y0poWKPr7tx8qkk9l55aXgG/view?usp=sharing" alt="DIFF Logo" class="logo" id="logoImg" />
-    </div> -->
+    <div class="logo-container">
+      <img src="" alt="DIFF Logo" class="logo" id="logoImg" />
+    </div>
 
-    <!-- Content -->
     <div class="hero-content">
       <div class="hero-title-container">
         <h1 class="hero-title">
@@ -223,7 +193,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <p class="footer-text">© 2026 DIFF. All rights reserved.</p>
@@ -231,11 +200,18 @@
   </footer>
 
   <script>
-    // Set the logo image to pull from images/difflogo.png
+    // Targets the logo element and sets the local source path
     const logoImg = document.getElementById('logoImg');
+    
+    // Ensure your logo is saved at: your-folder/images/difflogo.png
     logoImg.src = 'images/difflogo.png';
     
-    // Optional: Add smooth scroll behavior
+    // Optional: Log an error to the console if the file is missing
+    logoImg.onerror = function() {
+      console.warn("Logo file not found. Please check: images/difflogo.png");
+    };
+
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
