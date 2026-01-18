@@ -174,13 +174,9 @@
       <div class="hero-overlay"></div>
     </div>
 
-    <div>
-      <img src="/images/DiffLogo.png">
+    <div class="logo-container">
+      <img src="images/DiffLogo.png" alt="DIFF Logo" class="logo" />
     </div>
-
-    <!-- <div class="logo-container">
-      <img src="/images/DiffLogo.png" alt="DIFF Logo" class="logo" id="logoImg" />
-    </div> -->
 
     <div class="hero-content">
       <div class="hero-title-container">
@@ -204,17 +200,6 @@
   </footer>
 
   <script>
-    // Targets the logo element and sets the local source path
-    const logoImg = document.getElementById('logoImg');
-    
-    // Ensure your logo is saved at: your-folder/images/difflogo.png
-    logoImg.src = 'images/difflogo.png';
-    
-    // Optional: Log an error to the console if the file is missing
-    logoImg.onerror = function() {
-      console.warn("Logo file not found. Please check: images/difflogo.png");
-    };
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
